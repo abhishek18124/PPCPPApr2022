@@ -10,7 +10,11 @@ int main() {
 	cin >> n;
 
 	int count = 0;
-	for(int k=0; k<log2(n+1); k++) {
+
+	// ceil : https://www.cplusplus.com/reference/cmath/ceil/
+	// log2 : https://www.cplusplus.com/reference/cmath/log2/
+
+	for(int k=0; k<ceil(log2(n+1)); k++) {
 		// check if the kth bit of n is set or not
 
 		// if((n>>k)&1) {
