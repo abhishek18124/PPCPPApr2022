@@ -8,7 +8,7 @@ int main() {
 	int count = 0;
 	while(true) {
 
-		// cin >> ch;
+		cin >> ch;
 		ch = cin.get();
 		if(ch == '$') {
 			break;
