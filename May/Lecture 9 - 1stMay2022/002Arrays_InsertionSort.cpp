@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
 
-	int A[] = {50, 40, 30, 20, 10};
+	int A[] = {10, 40, 50, 30, 20};
 	int n = sizeof(A)/sizeof(int);
 
 	for(int i=1; i<n; i++) {
