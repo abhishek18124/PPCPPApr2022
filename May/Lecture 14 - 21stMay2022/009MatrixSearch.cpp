@@ -30,18 +30,22 @@ pair<int, int> search(int A[][3], int m, int n, int t) {
 
 int main() {
 
-	int A[][3] = {{3, 2, 1},
-                  {4, 5, 6},
-                  {9, 8, 7}};
+	// int A[][3] = {{3, 2, 1},
+ //                  {4, 5, 6},
+ //                  {9, 8, 7}};
 
-    int t = 18;
+ //    int t = 18;
 
-    int m = 3;
-    int n = 3;
+ //    int m = 3;
+ //    int n = 3;
 
-    pair<int, int> p = search(A, m, n, t);
+ //    pair<int, int> p = search(A, m, n, t);
 
-    cout << p.first << " " << p.second << endl;
+ //    cout << p.first << " " << p.second << endl;
+
+	pair<int, int> p = {1, 2};
+
+	cout << p << endl;
 
 	return 0;
 }
