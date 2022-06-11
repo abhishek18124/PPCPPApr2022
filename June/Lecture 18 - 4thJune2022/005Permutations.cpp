@@ -19,7 +19,7 @@ void generatePermutations(char* inp, int i) {
 		// 2. now, ask your friend to take decisions for the remaining pos.
 		//    starting with the (i+1)th pos.
 		generatePermutations(inp, i+1);
-		swap(inp[i], inp[j]); // backtrack step
+		// swap(inp[i], inp[j]); // backtrack step
 	}
 }
 
