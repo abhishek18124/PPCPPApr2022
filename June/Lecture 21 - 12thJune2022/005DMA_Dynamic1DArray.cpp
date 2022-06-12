@@ -9,7 +9,7 @@ int* resize(int* A, int capacity) {
 	for(int i=0; i<capacity; i++) {
 		B[i] = A[i];
 	}
-	delete[] A;
+	delete [] A;
 	return B;
 
 }
@@ -17,7 +17,7 @@ int* resize(int* A, int capacity) {
 int main() {
 
 	int capacity = 1;
-	int i = 0;
+	int i = 0; // size
 	int* A = new int[capacity];
 
 	int data;
