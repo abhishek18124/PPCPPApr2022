@@ -4,6 +4,33 @@
 
 using namespace std;
 
+bool myGreaterComparator(int a, int b) {
+	
+	// less<int> ()
+	
+	// if(a < b) {
+	// 	// you don't need swap
+	// 	return true;
+	// } else {
+	// 	// you need swap
+	// 	return false;
+	// }
+
+	// return a < b;
+
+	// greater<int>()
+
+	// if(a > b) {
+	// 	// you don't need a swap
+	// 	return true;
+	// }else {
+	// 	// you need a swap
+	// 	return false;
+	// }
+
+	return a > b;
+}
+
 int main() {
 
 	// create a vector using initialiser list
@@ -36,25 +63,25 @@ int main() {
 	
 	// 1. using rbegin() & rend()
 
-	sort(v2.rbegin(), v2.rend());
-	for(int i=0; i<v2.size(); i++) {
-		cout << v2[i] << " ";
-	}
+	// sort(v2.rbegin(), v2.rend());
+	// for(int i=0; i<v2.size(); i++) {
+	// 	cout << v2[i] << " ";
+	// }
 
-	// // 2. using greater<int>
+	// 2. using greater<int>
 
-	// // sort(v2.begin(), v2.end(), greater<int>()); // default is less<int> for sorting in inc. order
-	// // for(int i=0; i<v2.size(); i++) {
-	// // 	cout << v2[i] << " ";
-	// // }
-	// // cout << endl;
-
-	// // 3. using custom comparator
-	// sort(v2.begin(), v2.end(), myGreaterComparator);
+	// sort(v2.begin(), v2.end(), greater<int>()); // default is less<int> for sorting in inc. order
 	// for(int i=0; i<v2.size(); i++) {
 	// 	cout << v2[i] << " ";
 	// }
 	// cout << endl;
+
+	// 3. using custom comparator
+	sort(v2.begin(), v2.end(), myGreaterComparator);
+	for(int i=0; i<v2.size(); i++) {
+		cout << v2[i] << " ";
+	}
+	cout << endl;
 
 	return 0;
 }
