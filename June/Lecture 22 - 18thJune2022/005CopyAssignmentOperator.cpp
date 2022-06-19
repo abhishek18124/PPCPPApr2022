@@ -30,7 +30,7 @@ class Customer {
 			credits = c.credits;
 		}
 
-		void operator=(Customer c) {
+		void operator=(Customer& c) {
 			cout << "Inside copy assignment operator" << endl;
 			strcpy(name, c.name);
 			age = c.age;
@@ -58,8 +58,8 @@ int main() {
 	c1.printCustomerInfo();
 
 	Customer c2; // default constructor
-	 c2 = c1; // default copy assignment operator fn
-	// c2.operator=(c1);
+	// c2 = c1; // default copy assignment operator fn
+	c2.operator=(c1);
 	c2.printCustomerInfo();
 
 	return 0;

@@ -26,7 +26,6 @@ class Customer {
 			credits = c.credits;
 		}
 
-
 		void printCustomerInfo() {
 
 			cout << "Customer Information" << endl
