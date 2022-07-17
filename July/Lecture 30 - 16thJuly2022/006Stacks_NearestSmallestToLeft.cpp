@@ -9,7 +9,7 @@ int main() {
 	int A[] = {0, 3, 5, 4, 1, 6, 2};
 	int n = sizeof(A) / sizeof(int);
 
-	stack<pair<int, int>> s;
+	stack<pair<int, int>> s; // pair<index, A[index]>
 	for(int i=0; i<n; i++) {
 
 		while(!s.empty() && s.top().second >= A[i]) {
