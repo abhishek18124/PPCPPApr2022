@@ -7,10 +7,11 @@ https://www.spoj.com/problems/AGGRCOW/
 #include<iostream>
 #include<climits>
 #include<algorithm>
+#include<vector>
 
 using namespace std;
 
-bool canPlaceCows(int n, int c, int* pos, int m) {
+bool canPlaceCows(int n, int c, vector<int> pos, int m) {
 	
 	// place the 1st cow (C1) in the 0th stall i.e. pos[0]
 	int numOfCowsPlaced = 1;
@@ -33,7 +34,7 @@ bool canPlaceCows(int n, int c, int* pos, int m) {
 
 }
 
-int largestMinDist(int n, int c, int* pos) {
+int largestMinDist(int n, int c, vector<int> pos) {
 
 	int s = INT_MAX; // for the tightest lower-bound, place the two cows in stalls closest to each other
 	int e = pos[n-1]-pos[0]; // for the tightest upper-bound, place the two cows at the extreme positions
@@ -72,14 +73,16 @@ int main() {
 	cin >> t;
 
 	int n, c;
-	int* pos = new int[n];
+	// int* pos = new int[n];
+	vector<int> pos(n);
 
 	while(t--) {
 		cin >> n >> c;
 		for(int i=0; i<n; i++) {
 			cin >> pos[i];
 		}
-	    sort(pos, pos+n);
+	    // sort(pos, pos+n);
+		sort(pos.begin(), pos.end());
 		cout << largestMinDist(n, c, pos) << endl;
 	}	
 

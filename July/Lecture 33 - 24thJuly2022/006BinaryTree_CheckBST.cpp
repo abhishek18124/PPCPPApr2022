@@ -47,7 +47,7 @@ int main() {
 	root->right = new node(15);
 	root->right->left  = new node(13);
 	root->right->right = new node(17);
-
+	
 	ll lb = (ll)INT_MIN-1;
 	ll ub = (ll)INT_MAX+1;
 
