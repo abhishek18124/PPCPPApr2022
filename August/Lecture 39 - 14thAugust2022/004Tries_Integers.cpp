@@ -35,11 +35,45 @@ class trie {
 		}
 
 		void insert(int n) {
-			// todo ...
+			node* cur = root;
+			for(int i=31; i>=0; i--) {
+				int ith_bit = (n>>i)&1;
+				if(!ith_bit) { // ith_bit == 0
+					// ith_bit of n is unset, check if the current node has a left child
+					if(!cur->left) { // cur->left == NULL
+						cur->left = new node();
+					}
+					cur = cur->left;
+				} else {
+					// ith_bit of n is set, check if the current node has right child
+					if(!cur->right) { // cur->right == NULL
+						cur->right = new node;
+					}
+					cur = cur->right;
+				}
+			} 
 		}
 
 		bool search(int n) {
-			// todo ...
+			node* cur = root;
+			for(int i=31; i>=0; i--) {
+				int ith_bit = (n>>i)&1;
+				if(!ith_bit) {
+					// ith_bit of n is not set, check if the current node has a left child
+					if(!cur->left) { // cur->left == NULL
+						return false;
+					}
+					cur = cur->left;
+				} else {
+					// ith_bit of n is set, check if the current node has a right child
+					if(!cur->right) { // cur->right == NULL
+						return false;
+					}
+					cur = cur->right;
+				}
+			}
+
+			return true;
 		}
 };
 

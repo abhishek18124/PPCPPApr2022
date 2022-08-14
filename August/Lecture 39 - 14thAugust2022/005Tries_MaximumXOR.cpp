@@ -64,7 +64,36 @@ public:
 	}
 
 	int helper(int n) {
-		// todo ...
+		node* cur = root;
+		int y = 0;
+		int XOR = 0;
+		for(int i=31; i>=0; i--) {
+			int ith_bit = (n>>i)&1;
+			if(ith_bit == 0) {
+				// ith_bit is not set
+				if(cur->right != NULL) {
+					XOR += (1<<i);
+					y += (1<<i);
+					cur = cur->right;
+				} else {
+					cur = cur->left;
+				}
+
+			} else {
+				// ith_bit is set
+				if(cur->left != NULL) {
+					XOR += (1<<i);
+					cur = cur->left;
+				} else {
+					cur = cur->right;
+					y += (1<<i);
+				}
+			}
+		}
+
+		// cout << n << "^" << (n^XOR) << " : " << XOR << endl;
+
+		return XOR;
 	}
 
 	int maximumXOR(int* x, int n) {
@@ -78,7 +107,7 @@ public:
 
 int main() {
 
-	int x[] = {25, 10, 2, 8, 5, 3};
+	int x[] = {2, 4, 5, 8, 10};
 	int n = sizeof(x) / sizeof(int);
 
 	trie t;
