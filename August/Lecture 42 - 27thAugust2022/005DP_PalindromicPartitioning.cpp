@@ -76,6 +76,6 @@ int main() {
 
 	cout << countPalindromicPartitioning(str, 0, partition) << endl;
 	cout << countPalindromicPartitioningBottomUp(str) << endl;
-	
+
 	return 0;
 }
